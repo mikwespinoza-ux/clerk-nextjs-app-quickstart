@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { ClerkProvider, SignInButton, SignUpButton, Show, UserButton } from '@clerk/nextjs'
 import './globals.css'
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <SignUpButton />
             </Show>
             <Show when="signed-in">
+              <Link href="/protected">Protected</Link>
               <UserButton />
             </Show>
           </header>
